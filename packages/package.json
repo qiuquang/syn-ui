@@ -1,6 +1,6 @@
 {
-    "name": "syn-ui",
-    "version": "0.1.0",
+    "name": "synview-ui",
+    "version": "0.1.1",
     "description": "三翼鸟前端ui库",
     "author": "syn",
     "license": "Apache-2.0",

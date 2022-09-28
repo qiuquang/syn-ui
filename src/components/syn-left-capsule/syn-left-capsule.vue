@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import './left-capsule.scss'
+import './syn-left-capsule.scss'
 
 export default {
   components: {},

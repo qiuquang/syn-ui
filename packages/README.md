@@ -1,4 +1,4 @@
-# syn-ui
+# synview-ui
 
 ## Project setup
 ```
