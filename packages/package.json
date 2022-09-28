@@ -1,0 +1,20 @@
+{
+    "name": "syn-ui",
+    "version": "0.1.0",
+    "description": "三翼鸟前端ui库",
+    "author": "syn",
+    "license": "Apache-2.0",
+    "publishConfig": {
+        "access": "public"
+    },
+    "repository": {
+        "type": "git",
+        "url": "仓库地址"
+    },
+    "dependencies": {},
+    "devDependencies": {},
+    "browserslist": [
+        "Android >= 4",
+        "ios >= 8"
+    ]
+}

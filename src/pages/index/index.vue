@@ -1,49 +1,56 @@
 <template>
-	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
-		<view>
-			<text class="title">{{title}}</text>
-		</view>
+	<view class="left-capsule">
+    <view class="status-bar"></view>
+    <left-capsule @capsuleClick="capsuleClick" @doMenu="doMenu">
+      <!-- <template #menu>
+      </template> -->
+    </left-capsule>
+    <button @click="toTwo">toTwo</button>
 	</view>
 </template>
 
 <script>
-	export default {
-		data() {
-			return {
-				title: 'Hello'
-			}
-		},
-		onLoad() {
+// import LeftCapsule from '@/components/left-capsule.vue'
 
-		},
-		methods: {
-
+export default {
+  components: {},
+  props: {
+  },
+  data () {
+		return {
+      cdnImageUrl: 'https://cdn09.ehaier.com/shunguang/H5/www/img/sgmobile'
 		}
-	}
+  },
+  created () {
+    console.log('index-created');
+  },
+  mounted () {
+    console.log('index-mounted');
+  },
+  beforeDestroy () {
+    console.log('index-beforeDestroy');
+  },
+  onHide(){
+    console.log('index-onHide');
+  },
+  methods: {
+    capsuleClick(type){
+      console.log(type)
+
+    },
+    doMenu(val) {
+      console.log(val)
+    },
+    toTwo(){
+      uni.navigateTo({
+        url: '../one/one'
+      })
+    }
+  },
+  computed: {
+  },
+  watch: {}
+}
 </script>
-
-<style>
-	.content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
-
-	.logo {
-		height: 200rpx;
-		width: 200rpx;
-		margin: 200rpx auto 50rpx auto;
-	}
-
-	.text-area {
-		display: flex;
-		justify-content: center;
-	}
-
-	.title {
-		font-size: 36rpx;
-		color: #8f8f94;
-	}
+<style lang="scss" scoped>
 </style>

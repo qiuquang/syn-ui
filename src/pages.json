@@ -3,7 +3,19 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				"navigationBarTitleText": "left-capsule"
+			}
+		},
+		{
+			"path": "pages/one/one",
+			"style": {
+				"navigationBarTitleText": "left-capsule-two"
+			}
+		},
+		{
+			"path": "pages/two/two",
+			"style": {
+				"navigationBarTitleText": "left-capsule-two"
 			}
 		}
 	],
@@ -11,6 +23,10 @@
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
+		"backgroundColor": "#F8F8F8",
+		"navigationStyle": "custom"
+	},
+	"easycom": {
+		"^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
 	}
 }

@@ -1,8 +1,10 @@
 {
   "name": "syn-ui",
   "version": "0.1.0",
-  "private": true,
   "scripts": {
+    "docs:gen": "hjtvuese gen",
+    "cmp": "node build/build-cmp.js cmp",
+    "build:npm": "node build/build-cmp.js npm",
     "serve": "npm run dev:h5",
     "build": "npm run build:h5",
     "build:app-plus": "cross-env NODE_ENV=production UNI_PLATFORM=app-plus vue-cli-service uni-build",
@@ -71,8 +73,13 @@
     "core-js": "^3.8.3",
     "flyio": "^0.6.2",
     "regenerator-runtime": "^0.12.1",
+    "sass": "^1.55.0",
+    "uview-ui": "^1.8.4",
     "vue": "^2.6.14",
-    "vuex": "^3.2.0"
+    "vuex": "^3.2.0",
+    "autoprefixer": "^10.0.2",
+    "postcss": "^8.1.7",
+    "postcss-loader": "^4.0.4"
   },
   "devDependencies": {
     "@babel/runtime": "~7.17.9",
@@ -87,6 +94,7 @@
     "@dcloudio/vue-cli-plugin-uni-optimize": "^2.0.1-36420220922001",
     "@dcloudio/webpack-uni-mp-loader": "^2.0.1-36420220922001",
     "@dcloudio/webpack-uni-pages-loader": "^2.0.1-36420220922001",
+    "@hjtvuese/cli": "^2.14.25",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
     "babel-plugin-import": "^1.11.0",
@@ -95,11 +103,15 @@
     "mini-types": "*",
     "miniprogram-api-typings": "*",
     "postcss-comment": "^2.0.0",
+    "shelljs": "^0.8.5",
     "vue-template-compiler": "^2.6.14"
   },
   "browserslist": [
     "Android >= 4.4",
     "ios >= 9"
+  ],
+  "files": [
+    "packages"
   ],
   "resolutions": {
     "@babel/runtime": "~7.17.9"
