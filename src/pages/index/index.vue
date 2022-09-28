@@ -28,7 +28,7 @@ export default {
     console.log('index-mounted');
   },
   beforeDestroy () {
-    console.log('index-beforeDestroy');
+    console.log('index-beforeDestroy1');
   },
   onHide(){
     console.log('index-onHide');
