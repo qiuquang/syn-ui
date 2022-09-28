@@ -1,11 +1,11 @@
 <template>
   <view>
     <view class="status-bar"></view>
-    <left-capsule @capsuleClick="capsuleClick">
+    <syn-left-capsule @capsuleClick="capsuleClick">
       <template name="menu">
         <view>menu</view>
       </template>
-    </left-capsule>
+    </syn-left-capsule>
   </view>
 </template>
 <script>

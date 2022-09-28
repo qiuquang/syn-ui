@@ -1,10 +1,10 @@
 <template>
-	<view class="left-capsule">
+	<view class="syn-left-capsule">
     <view class="status-bar"></view>
-    <left-capsule @capsuleClick="capsuleClick" @doMenu="doMenu">
+    <syn-left-capsule @capsuleClick="capsuleClick" @doMenu="doMenu">
       <!-- <template #menu>
       </template> -->
-    </left-capsule>
+    </syn-left-capsule>
     <button @click="toTwo">toTwo</button>
 	</view>
 </template>

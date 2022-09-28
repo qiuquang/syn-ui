@@ -1,5 +1,5 @@
 <template>
-		<view class="left-capsule">
+		<view class="sync-left-capsule">
 			<view class="left">
         <image v-if="isToHome" :src="homeIcon" class="home-img" @click="capsuleClick('home')"/>
         <image v-else :src="backIcon" class="back-img" @click="capsuleClick('back')"/>
