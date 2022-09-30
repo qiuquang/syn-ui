@@ -1,6 +1,6 @@
 <template>
   <view>
-    <view class="status-bar"></view>
+    <syn-status-bar></syn-status-bar>
     <syn-left-capsule @capsuleClick="capsuleClick">
       <template name="menu">
         <view>menu</view>

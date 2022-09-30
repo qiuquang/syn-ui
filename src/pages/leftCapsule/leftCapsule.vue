@@ -1,6 +1,6 @@
 <template>
 	<view class="syn-left-capsule">
-    <view class="status-bar"></view>
+    <syn-status-bar></syn-status-bar>
     <syn-left-capsule @capsuleClick="capsuleClick" @doMenu="doMenu">
       <!-- <template #menu>
       </template> -->
@@ -10,10 +10,7 @@
 </template>
 
 <script>
-// import LeftCapsule from '@/components/left-capsule.vue'
-
 export default {
-  components: {},
   props: {
   },
   data () {

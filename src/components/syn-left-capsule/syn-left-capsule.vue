@@ -46,7 +46,7 @@ export default {
       default: () => {
         return [
           {
-            label: 'menu12-34',
+            label: 'menu1',
             iconCls: '',
             uIconName: 'photo',
             type: 'page',
@@ -73,17 +73,25 @@ export default {
       return getCurrentPages().length <= 1;
     }
   },
-  onHide() {
-
-    console.log('lft-onHide')
-  },
   created () {
+    console.log('lft-created')
   },
   mounted () {
-    console.log('mounted')
+    console.log('lft-mounted')
+    const pages = getCurrentPages()
+    console.log(pages)
+    // const query = uni.createSelectorQuery().in(pages[pages.length - 1].$vm).select('.menu');
+    // console.log(query)
+    // query.boundingClientRect(data => {
+    //   console.log("得到布局位置信息" + JSON.stringify(data));
+    //   console.log("节点离页面顶部的距离为" + data.top);
+    // }).exec();
+    // query.fields({properties: ['calss', 'id' ,'style'],computedStyle: ['height', 'width']},data => {
+    //   console.log('fields', data)
+    // }).exec();
   },
   beforeDestroy () {
-    console.log('beforeDestroy')
+    console.log('lft-beforeDestroy')
   },
   methods: {
     capsuleClick(type) {

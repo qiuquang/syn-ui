@@ -1,7 +1,14 @@
 {
-	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+	"pages": [
 		{
-			"path": "pages/index/index",
+			"path": "pages/menu/menu",
+			"style": {
+				"navigationBarTitleText": "三翼鸟菜单",
+				"disableScroll": true
+			}
+		},
+		{
+			"path": "pages/leftCapsule/leftCapsule",
 			"style": {
 				"navigationBarTitleText": "left-capsule"
 			}
@@ -25,6 +32,19 @@
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8",
 		"navigationStyle": "custom"
+	},
+	"tabBar": {
+		"color": "#7A7E83",
+		"selectedColor": "#3cc51f",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"list": [{
+			"pagePath": "pages/menu/menu",
+			"text": "tabBar1"
+		}, {
+			"pagePath": "pages/two/two",
+			"text": "tabBar2"
+		}]
 	},
 	"easycom": {
 		"^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
