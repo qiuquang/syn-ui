@@ -1,6 +1,6 @@
 {
   "name": "synview-ui",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "scripts": {
     "docs:gen": "hjtvuese gen",
     "cmp": "node build/build-cmp.js cmp",
