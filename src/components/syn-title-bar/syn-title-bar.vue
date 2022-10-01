@@ -5,9 +5,13 @@
 </template>
 
 <script>
+  // 这是和右侧胶囊对齐的标题组件，左侧胶囊组件、胶囊占位组件放置后，可使标题居中。
+  // @vuese
+  // @group 胶囊栏组件
 export default {
   name: 'syn-title-bar',
   props: {
+    // 页面标题
     pageTitle: {
       type: String,
       default: 'pageTitle'

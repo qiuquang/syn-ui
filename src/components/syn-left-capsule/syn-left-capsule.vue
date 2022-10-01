@@ -8,7 +8,6 @@
         <view class="midd"></view>
         <view class="right">
           <image :src="menuIcon" class="menu-img" @click="capsuleClick('menu')" />
-          <slot name="menu"></slot>
         </view>
         <view class="u-mask" hover-stop-propagation :style="[maskStyle]" @click="maskClick"  @touchmove.stop.prevent="() => {}" :class="{'u-mask-show': menuShow}">
           <view v-if="menuShow" class="nav-menu">
@@ -34,24 +33,40 @@
 <script>
 import './syn-left-capsule.scss'
 import {statusBarInfo} from '../utils'
-
+  // 这是微信小程序与右侧胶囊完全镜像的左侧胶囊组件，包括返回首页、返回上一页、显示菜单、跳转菜单中页面、收藏当前页面功能。
+  // @group 胶囊栏组件
 export default {
-  components: {},
+  name: 'syn-left-capsule',
   props: {
+    // 胶囊左侧-home图标
     homeIcon: {
       type: String,
       default: `https://cdn09.ehaier.com/shunguang/H5/www/img/sgmobile/privateMall/icon/nav_home.png`
     },
+    // 胶囊左侧-返回图标
     backIcon: {
       type: String,
       default: `https://cdn09.ehaier.com/shunguang/H5/www/img/sgmobile/privateMall/product/1-1-back.png`
     },
+    // 胶囊右侧-菜单图标
     menuIcon: {
       type: String,
       default: `https://cdn09.ehaier.com/shunguang/H5/www/img/sgmobile/privateMall/product/1-1-menu.png`
     },
+    // 胶囊右侧-菜单的详情
+    // 涉及到修改menuList的内容，组件传值时需要 :munuList.sync="xxx" 进行传值
     menuList: {
       type: Array,
+      /**
+       * { 
+       * type：String 菜单类别：page \| changeIcon， page为跳转新页面，changeIcon为更换图标，
+       * label：String 菜单名称，
+       * activeLabel：String 要更改的菜单名称，
+       * iconCls：String 菜单前icon图标，
+       * changedIconCls：String 激活后icon图标，
+       * active：Boolean 激活状态，默认是false
+       * }
+       */
       default: () => {
         return [
           // {
@@ -113,7 +128,12 @@ export default {
         case 'menu':
         this.menuShow = true
         break;
-      }
+      }      
+      // 点击胶囊图标时触发的事件
+      // @arg 胶囊图标的类别: 'home' \| 'back' \| 'menu'，
+      // @arg home为返回主页，需要自己在事件回调中写；
+      // @arg back为返回上一页；
+      // @arg menu显示menu菜单(即menuList的内容)。
       this.$emit('capsuleClick', type)
     },
     maskClick() {
@@ -131,9 +151,12 @@ export default {
         pp[index].active = !item.active
         this.$emit('update:menuList', pp)
       }
+    // 点击menuList里面每条内容的事件
+    // @arg menu的类别: 'page' \| 'changeIcon'，
+    // @arg page：跳转页面，到toUrl的页面；
+    // @arg changeIcon： 改变图标和文字内容：iconCls->changedIconCls、label->activeLabel。
       this.$emit('doMenu', item)
     }
-  },
-  watch: {}
+  }
 }
 </script>

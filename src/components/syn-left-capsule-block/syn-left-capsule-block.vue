@@ -3,6 +3,9 @@
 </template>
 
 <script>
+  // 这是与微信小程序右侧胶囊对齐的左侧占位组件，用于在左侧占位。
+  // @vuese
+  // @group 胶囊栏组件
 export default {
   name: 'syn-left-capsule-block',
 }
