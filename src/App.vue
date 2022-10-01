@@ -18,4 +18,5 @@
 	/*每个页面公共css */
 	@import "./styles/uni.css";
 	@import "~@/styles/base.scss";
+  @import "@/static/css/iconfont.css";
 </style>

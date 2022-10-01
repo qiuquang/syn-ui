@@ -7,3 +7,10 @@
   background: transparent;
   color: transparent;
 }
+.commonPageHeader{
+  display: flex;
+  margin-bottom:14rpx;
+  syn-title-bar{
+    flex: 1;
+  }
+}

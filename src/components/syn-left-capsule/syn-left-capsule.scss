@@ -37,6 +37,7 @@
       .back-img {
         width: 60rpx;
         height: 100%;
+        transform: translateX(-6rpx);
       }
     }
     .right {
@@ -49,30 +50,36 @@
     }
   .nav-menu {
     position: absolute;
-    left: 0rpx;
-    z-index: 6;
-    width: 232rpx;
-    height: 202rpx;
-    box-shadow: 0px 2px 2px #ddd;
+    left: 20rpx;
+    z-index: 10071;
+    width: 242rpx;
+    height: 184rpx;
+    box-shadow: 0px 2px 80px rgba(0,0,0,0.16);
     border-radius: 16rpx;
-    top: 57rpx;
+    padding: 0rpx 30rpx;
+    // top: 57rpx;
     // background-color: red;
     .menu-list {
-      padding: 16rpx 24rpx 0 24rpx;
       font-size: 48rpx;
       height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       .menu-item {
         display: flex;
         align-items: center;
-        height: 90rpx;
-        border-bottom: 2rpx solid #EEEEEE;
+        height: 50%;
+        position: relative;
         &:nth-last-of-type(1) {
           border: none;
         }
         .iconfont {
-          font-size: 42rpx;
+          height: 44rpx;
+          width: 44rpx;
+          line-height: 44rpx;
+          font-size: 44rpx;
           color: #222222;
-          margin-right: 14rpx;
+          margin-right: 16rpx;
           &.icona-03gengduo_shoucang-11 {
             color: #FF4D21;
           }
@@ -83,8 +90,18 @@
           font-weight: 400;
           font-family: "PingFang SC";
           text-align: center;
-          margin-left: 20rpx;
+          height: 44rpx;
+          line-height: 44rpx;
         }
+      }
+      .menu-item:first-child::after{
+        width: 100%;
+        height: 2rpx;
+        background-color: #eeeeee;
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 100%;
       }
       u-icon{
         transform: translateY(4rpx);
@@ -97,6 +114,29 @@
       z-index: -1;
       width: 100%;
       height: 100%;
+    }
+  }
+  .u-mask {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		opacity: 0;
+		transition: transform 0.3s;
+	}
+	.u-mask-show {
+		opacity: 1;
+	}
+}
+.sync-left-capsule-single{
+  width: 60rpx;
+  .single-btn{
+    height: 100%;
+    width: 100%;
+    .back-img{
+      height: 100%;
+      width: 100%;
     }
   }
 }

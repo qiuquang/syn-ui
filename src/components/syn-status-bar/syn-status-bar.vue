@@ -3,11 +3,13 @@
 </template>
 
 <script>
+import {statusBarInfo} from '../utils'
+
 export default {
   name: 'syn-status-bar',
   computed: {
     statusBarHeight() {
-      return uni.getMenuButtonBoundingClientRect().top + 'px'
+      return statusBarInfo.top + 'px'
     }
   }
 

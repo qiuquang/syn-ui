@@ -1,42 +1,36 @@
 <template>
   <view class="menu">
     <syn-status-bar></syn-status-bar>
-    <view style="display:flex">
-      <syn-left-capsule></syn-left-capsule>
-      <syn-title-bar :pageTitle="pageTitle" style="flex: 1;">
+    <view class="commonPageHeader">
+      <syn-left-capsule-block></syn-left-capsule-block>
+      <syn-title-bar pageTitle="三翼鸟view菜单页">
       </syn-title-bar>
-      <view :style="{height:'100%',width:rightWidth}"></view>
+      <syn-right-capsule-block></syn-right-capsule-block>
     </view>
     <scroll-view class="menu-scroll" :scroll-top="scrollTop" scroll-y="true" :style="{height:scrollH+'rpx'}">
-      <u-button style="width:380rpx" @click="toLeftCapsule">左侧胶囊</u-button>
-			<!-- <view id="demo1" class="scroll-view-item uni-bg-red">A</view>
-			<view id="demo2" class="scroll-view-item uni-bg-green">B</view>
-			<view id="demo3" class="scroll-view-item uni-bg-blue">C</view> -->
+      <u-button style="width:380rpx" @click="toLeftCapsule">To左侧胶囊页面</u-button>
 		</scroll-view>
   </view>
 </template>
 
 <script>
+import { menuList } from '../commonConfig'
+import { uinappInit } from '../../plugin/utils'
 export default {
+  components: {},
   data() {
     return {
-      pageTitle: '三翼鸟view菜单',
-      rightWidth: '0px'
+      menuList
     }
   },
   created() {
-			const app = getApp()
-      app.globalData.systemInfo = uni.getSystemInfoSync()
-      app.globalData.menuButton = uni.getMenuButtonBoundingClientRect()
-      this.rightWidth = `${app.globalData.systemInfo.screenWidth - app.globalData.menuButton.left}px`
-      console.log(app)
+    uinappInit()
   },
   mounted() {
   },
   computed:{
 		scrollH() {
 			const app = getApp()
-      console.log(app,'pppppp')
 			let winWidth = app.globalData.systemInfo.windowWidth;
 			let winrate = 750/winWidth;
       console.log('app.globalData.systemInfo.safeArea.height', app.globalData.systemInfo.safeArea.height)
@@ -47,12 +41,16 @@ export default {
 	},
   methods: {
     toLeftCapsule(){
-      uni.navigateTo({
-        url: '../leftCapsule/leftCapsule'
+      uni.redirectTo({
+        url: '/pages/leftCapsule/leftCapsulePageOne'
       })
     },
     menuPageClick(e) {
       console.log(e)
+    },
+    doMenu(val) {
+      // 菜单跳转
+      console.log(val)
     }
   }
 }
@@ -60,8 +58,6 @@ export default {
 
 <style scoped lang="scss">
 .menu{
-  /* padding-bottom: constant(safe-area-inset-bottom); 
-  padding-bottom: env(safe-area-inset-bottom);  */
   .menu-scroll{
     width: 100%;
     padding: 60rpx 30rpx 0 30rpx;

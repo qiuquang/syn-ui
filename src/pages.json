@@ -3,27 +3,20 @@
 		{
 			"path": "pages/menu/menu",
 			"style": {
-				"navigationBarTitleText": "三翼鸟菜单",
 				"disableScroll": true
 			}
 		},
 		{
-			"path": "pages/leftCapsule/leftCapsule",
-			"style": {
-				"navigationBarTitleText": "left-capsule"
-			}
+			"path": "pages/leftCapsule/leftCapsulePageOne"
 		},
 		{
-			"path": "pages/one/one",
-			"style": {
-				"navigationBarTitleText": "left-capsule-two"
-			}
+			"path": "pages/leftCapsule/leftCapsulePageTwo"
 		},
 		{
-			"path": "pages/two/two",
-			"style": {
-				"navigationBarTitleText": "left-capsule-two"
-			}
+			"path": "pages/casualAround/casualAround"
+		},
+		{
+			"path": "pages/mytab/mytab"
 		}
 	],
 	"globalStyle": {
@@ -34,16 +27,20 @@
 		"navigationStyle": "custom"
 	},
 	"tabBar": {
-		"color": "#7A7E83",
-		"selectedColor": "#3cc51f",
+		"color": "#999999",
+		"selectedColor": "#4574F5",
 		"borderStyle": "black",
 		"backgroundColor": "#ffffff",
 		"list": [{
 			"pagePath": "pages/menu/menu",
-			"text": "tabBar1"
+			"text": "首页",
+			"iconPath": "static/imgs/tab-bar/home_gray.png",
+			"selectedIconPath": "static/imgs/tab-bar/home_blue.png"
 		}, {
-			"pagePath": "pages/two/two",
-			"text": "tabBar2"
+			"pagePath": "pages/mytab/mytab",
+			"text": "我的",
+			"iconPath": "static/imgs/tab-bar/wode_gray.png",
+			"selectedIconPath": "static/imgs/tab-bar/wode_blue.png"
 		}]
 	},
 	"easycom": {
